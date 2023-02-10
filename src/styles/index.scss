@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './responsive.scss';
+
+@font-face {
+    font-family: Savoye;
+    src: url('../assets/Savoye.otf');
+}
+body {
+    overflow-x: hidden;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#half-rounded-button {
+    border-radius: 100%;
+}
+
+.left-line-width {
+    min-width: 5rem;
+    width: 5rem;
+    height: auto;
+}
+
+#owner_bg_title {
+    letter-spacing: 5rem;
+    right: -12rem;
+}
+
+#kenter_name_title {
+    margin-top: -0.5rem;
+}
+
+#stanton_name_title {
+    margin-top: -2rem;
+}
+
+#madsen_name_title {
+    margin-top: -6rem;
+}
+
+.bgtext:after {
+    content: "LANDSCAPE DESIGN INSTALLATION  MAINTENANCE";
+    position: absolute;
+    color: #CEDAD8;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family:Raleway ;
+    font-weight: 900;
+   font-size: 160px;
+   text-align: center;
+   line-height: 0.9em;
+   opacity: 0.8;
+}
+
+#blue_box_wrapper {
+    margin-top: -6.5rem;
+    min-height: 1050px;
+}
+
+.center_with_transform {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#this_year_titles {
+    margin-left: -8rem;
+    margin-top: -0.5rem;
+}
+
+#how_it_works_title_wrapper {
+    margin-top: -2rem;
+}
+
+#looking_forward_title_wrapper {
+    margin-top: -3rem;
+}
+
+#header_poetry_title {
+    font-size: 7rem;
+    @include for-size(big-desktop) {
+        font-size: 8rem;
+    }
+    @include for-size(mid-desktop) {
+        font-size: 5.5rem;
+    }
+    @include for-size(tablet-landscape) {
+        font-size: 4.2rem;
+    }
+}
+
+#header_wrapper {
+    @include for-size(tablet-landscape) {
+        flex-direction: row-reverse;
+    }
+    @include for-size(tablet-portrait) {
+        flex-direction: column;
+    }
+}
+
+#header_house_container {
+    @include for-size(tablet-landscape) {
+        border-right: 0;
+        border-left: 1px solid black;
+        padding-left: 1rem;
+    }
+    @include for-size(tablet-portrait) {
+        border-left: 0;
+        width: 100%;
+    }
+}
+
+#header_titles_container {
+    @include for-size(tablet-landscape) {
+        padding-left: 1rem;
+    }
+    @include for-size(tablet-portrait) {
+        width: 100%;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+#header_assembly_title {
+    @include for-size(tablet-landscape) {
+        font-size: 5.5rem;
+    }
+}
