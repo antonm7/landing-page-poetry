@@ -4,6 +4,8 @@ import HeaderHouse from '/headerHouse.jpg'
 import ArielKenter from '/arielKenter.png'
 import RyanStanton from '/ryanStanton.png'
 import RhielMadsen from  '/rhielMadsen.png'
+import GalleryBigger from  '/galleryBigger.jpg'
+import GallerySmaller from  '/gallerySmaller.png'
 
 function App() {
   return (
@@ -148,6 +150,31 @@ function App() {
                 </div>
               </div>    
             </div>
+        </div>
+        <div className='flex'>
+          <div className="left-line-width border-r-[1px] border-black h-full"></div> 
+          <div className=' mt-36 w-full flex justify-center '>
+            <div className='flex mr-16'>
+                <div className='relative'>
+                  <p className='-rotate-90 absolute whitespace-nowrap' id='gallery_rotate_text'>We make design more accessible.</p>
+                </div>
+                <div>
+                  <LazyLoadImage id='galleryBigger_img' src={GalleryBigger} alt="Gallery Image"/>
+                </div>
+            </div>
+            <div>
+              <p className='font-raleway font-medium textlg text-brownFill max-w-[300px]'>
+                Since our last Fitzroy House construction update a milestone was reached with the removal of the crane, the building is now at lock-up stage.
+              </p>
+              <div className='pt-28'>
+                <span className='font-raleway font-medium text-lg text-brown'>{'{ 01 }'}</span>
+                <div className='mt-3 flex items-center'>
+                  <LazyLoadImage src={GallerySmaller}/>
+                  <span className='pl-8 font-raleway text-brwonFill font-bold text-xl'>COMPREHENSIVE<br />SERVICES</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

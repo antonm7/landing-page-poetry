@@ -179,6 +179,18 @@ body {
     }
 }
 
+#owners_paragraphs_wrapper {
+    @include for-size(tablet-landscape) {
+        padding-left: 2rem;
+    }
+    div {
+        @include for-size(tablet-landscape) {
+            padding-left: 0rem;
+            width: 100%;
+        }
+    }
+}
+
 #arielKenter_img {
     min-width: 290px;
     height: 303px;
@@ -245,4 +257,18 @@ body {
 
 #arielKenter_name_text_container {
     padding-left: 0;
+}
+
+#galleryBigger_img  {
+    width: 370px;
+    height: 550px;
+    @include for-size(big-desktop) {
+        width: 270px;
+        height: 450px;
+    }
+}
+
+#gallery_rotate_text {
+    left: -10rem;
+    bottom: 7rem;
 }
