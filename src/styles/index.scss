@@ -58,11 +58,21 @@ body {
    text-align: center;
    line-height: 0.9em;
    opacity: 0.8;
+   word-wrap:break-word;
+   max-width: 100%;
+   @include for-size(tablet-landscape) {
+    font-size: 120px;
+    line-height: 1.2em;
+   }
+   @include for-size(tablet-portrait) {
+    font-size: 60px;
+    line-height: 1.2em;
+   }
 }
 
 #blue_box_wrapper {
     margin-top: -6.5rem;
-    min-height: 1050px;
+    // min-height: 1050px;
 }
 
 .center_with_transform {
@@ -78,6 +88,13 @@ body {
 
 #how_it_works_title_wrapper {
     margin-top: -2rem;
+    @include for-size(tablet-portrait) {
+        padding-bottom: 1rem;
+    }
+}
+
+#how_it_works_title {
+    font-size: 12vw;
 }
 
 #looking_forward_title_wrapper {
@@ -133,4 +150,99 @@ body {
     @include for-size(tablet-landscape) {
         font-size: 5.5rem;
     }
+}
+
+#owners_paragraphs_wrapper {
+    @include for-size(mid-desktop) {
+        padding-left: 4rem;
+    }
+    @include for-size(tablet-landscape) {
+        flex-direction: column;
+    }
+}
+
+#owners_pairing_paragraph_wrapper {
+    @include for-size(mid-desktop) {
+        padding-left: 0rem;
+    }
+    @include for-size(tablet-landscape) {
+        padding-top: 2rem;
+    }
+}
+
+#owners_images_content_wrapper {
+    @include for-size(tablet-landscape) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top:10rem;
+        flex-direction: column;
+    }
+}
+
+#arielKenter_img {
+    min-width: 290px;
+    height: 303px;
+    @include for-size(tablet-landscape) {
+        min-width: 200px;
+        height: 213px;
+    }
+}
+
+#ryanStanton_content_wrapper {
+    @include for-size(tablet-landscape) {
+       width: 100%;
+    }
+}
+
+#ryanStanton_images_container {
+    @include for-size(tablet-landscape) {
+        float: right;
+        padding-top: 10rem;
+     }
+}
+
+#ryanStanton_img {
+    min-width: 220px;
+    height: 350px;
+    @include for-size(tablet-landscape) {
+        min-width: 120px;
+        height: 250px;
+    }
+}
+
+#rhielMedsen_img {
+    @include for-size(tablet-landscape) {
+        min-width: 200px;
+        height: 213px;
+    }
+}
+
+#rhielMedsen_content_wrapper {
+    @include for-size(tablet-landscape) {
+        padding-top: 8rem;
+        padding-left: 2rem;
+    }
+}
+
+#owners_small_titles_wrapper {
+    @include for-size(tablet-portrait) {
+        margin-top: 3rem;
+        margin-bottom: 10rem;
+    }
+}
+
+.images_names_text {
+    @include for-size(tablet-portrait) {
+        scale: 0.7;
+    }
+}
+
+#rhiel_text {
+    @include for-size(tablet-portrait) {
+        padding-right: 1rem;
+    }
+}
+
+#arielKenter_name_text_container {
+    padding-left: 0;
 }

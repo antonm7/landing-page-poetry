@@ -56,21 +56,19 @@ function App() {
           </div>
       </div>
       {/*2 paragraphs after header  */}
-      <div className='flex bg-white'>
+      <div className='flex bg-white' >
         <div className="left-line-width border-r-[1px] border-black"></div> 
-        <div className='w-full pl-32 '>
-          <div className="flex w-full pt-52 ">
-            <div className='w-2/4'>
-              <p className=' max-w-lg leading-normal font-raleway font-semibold text-4xl text-fillBrown'>
-                WE OFFER FULL-SERVICE LIGHTING FROM CONCEPT IDEATION.
-              </p>
-            </div>
-            <div className='pl-16 w-2/4'>
-              <p className='font-raleway text-lg font-normal text-brownFill max-w-lg leading-relaxed pb-5'>
-              Pairing modular philosophy with modernized construction techniques, our company practices a more conscious method of building that allows fast and easy installation with limited site disturbance. Everything is pre-built in our factory resulting in less waste and a significantly lower carbon footprint compared to traditional methods. 
-              </p>
-              <span className='font-raleway text-brownFill text-lg font-bold underline underline-offset-8'>See Our Works</span>
-            </div>
+        <div className='flex pt-52 w-full pl-32 ' id='owners_paragraphs_wrapper'>
+          <div className='w-2/4'>
+            <p className=' max-w-lg leading-normal font-raleway font-semibold text-4xl text-fillBrown'>
+              WE OFFER FULL-SERVICE LIGHTING FROM CONCEPT IDEATION.
+            </p>
+          </div>
+          <div className='pl-16 w-2/4' id="owners_pairing_paragraph_wrapper">
+            <p className='font-raleway text-lg font-normal text-brownFill max-w-lg leading-relaxed pb-5'>
+            Pairing modular philosophy with modernized construction techniques, our company practices a more conscious method of building that allows fast and easy installation with limited site disturbance. Everything is pre-built in our factory resulting in less waste and a significantly lower carbon footprint compared to traditional methods. 
+            </p>
+            <span className='font-raleway text-brownFill text-lg font-bold underline underline-offset-8'>See Our Works</span>
           </div>
         </div>
       </div>
@@ -80,33 +78,33 @@ function App() {
           <div className="left-line-width border-r-[1px] border-black">
             OWNERS
           </div> 
-          <div className='w-full flex pl-32 pt-56'>
+          <div className='w-full flex pl-32 pt-56' id='owners_images_content_wrapper'>
             <div className='w-2/4'>
               <div className='flex items-center '>
                 <div className='flex flex-col '>
-                  <LazyLoadImage alt="Woman Image" src={ArielKenter}/>
+                  <LazyLoadImage alt="Woman Image" src={ArielKenter} id='arielKenter_img'/>
                   <span className='font-raleway font-medium text-lg text-brownFill self-end pt-2'>HR Specialist</span>
                 </div>
-                <div className='flex flex-col'>
-                  <span className='font-raleway text-6xl text-brownFill font-normal inline-block pl-20'>
+                <div className='flex flex-col' id='arielKenter_name_text_container'>
+                  <span className='images_names_text font-raleway text-6xl text-brownFill font-normal inline-block pl-20'>
                     <span className='font-savoye text-8xl'>A</span>riel
                   </span>
-                  <span className='font-raleway text-6xl text-brownFill font-normal pl-10' id="kenter_name_title">Kenter</span>
+                  <span className='images_names_text font-raleway text-6xl text-brownFill font-normal pl-10' id="kenter_name_title">Kenter</span>
                 </div>
               </div>
             </div>
-            <div className='z-10 relative w-2/4 h-full'>
+            <div className='z-10 relative w-2/4 h-full' id='ryanStanton_content_wrapper'>
               <h2 className='absolute top-0 right-0 text-[#F1F4F3] font-bold text-8xl' id="owner_bg_title">OWNER</h2>
-              <div className='flex items-center pt-72'>
+              <div className='flex items-center pt-72' id='ryanStanton_images_container'>
                 <div className='flex flex-col'>
-                  <LazyLoadImage alt="Woman Image" src={RyanStanton}/>
+                  <LazyLoadImage alt="Woman Image" id='ryanStanton_img' src={RyanStanton}/>
                   <span className='font-raleway font-medium text-lg text-brownFill self-end pt-2'>Product Manager</span>
                 </div>
                 <div className='flex flex-col'>
-                  <span className='leading-2 font-raleway text-6xl text-brownFill font-normal inline-block pl-24'>
+                  <span className='images_names_text leading-2 font-raleway text-6xl text-brownFill font-normal inline-block pl-24'>
                     R<span className='font-savoye text-8xl pl-1 leading-2'>y</span>an
                   </span>
-                  <span className='leading-2 font-raleway text-6xl text-brownFill font-normal pl-10' id="stanton_name_title">
+                  <span className='images_names_text leading-2 font-raleway text-6xl text-brownFill font-normal pl-10' id="stanton_name_title">
                     <span className='font-savoye text-8xl'>S</span>tanton
                   </span>
                 </div>
@@ -119,30 +117,30 @@ function App() {
             <div className='w-full mx-10'>
               <div className='relative w-full bg-[#DAE4E1] h-full'>
                 <div className='bgtext'></div>
-                <div className='flex items-center pl-24 pt-20'>
+                <div className='flex items-center pl-24 pt-20 relative z-20' id='rhielMedsen_content'>
                   <div className='flex flex-col items-end pr-16'>
-                    <span className='font-raleway text-6xl text-brownFill font-normal '>
+                    <span id="rhiel_text" className='images_names_text font-raleway text-6xl text-brownFill font-normal '>
                       R<span className='font-savoye text-8xl pl-1'>h</span>iel
                     </span>
-                    <span id="madsen_name_title" className='font-raleway text-6xl text-brownFill font-normal '>
+                    <span id="madsen_name_title" className=' images_names_text font-raleway text-6xl text-brownFill font-normal '>
                       <span className='font-savoye text-10xl pl-1'>m</span>adsen
                     </span>
                   </div>
-                  <div className='flex flex-col'>
-                    <LazyLoadImage alt="CEO Image" src={RhielMadsen}/>
-                    <span className='font-raleway font-medium text-lg text-brownFill self-end pt-2'>CEO</span>
+                  <div className='flex flex-col relative '>
+                    <LazyLoadImage alt="CEO Image" src={RhielMadsen} id='rhielMedsen_img'/>
+                    <span className='font-raleway font-medium text-lg text-brownFill self-end pt-2 '>CEO</span>
                   </div>
                 </div>
-                <div className='mt-40 z-20 text-center relative '>
+                <div className='mt-48 z-20 text-center relative' id="owners_small_titles_wrapper">
                   <span className='text-center font-raleway font-medium text-3xl text-brownFill '>OWNERS <br /> EXPECTED TO MOVE</span>
                   <div id='this_year_titles'>
                     <span className='text-start font-savoye font-medium text-6xl text-brownFill'>in September <br /></span>
                     <span className='text-center font-raleway font-medium text-3xl text-brownFill'>THIS YEAR</span>
                   </div>
                 </div>
-                <div className='text-center' id="how_it_works_title_wrapper">
-                  <span className='text-center font-raleway text-130xl text-brownFill relative z-20'>
-                    <span className='font-savoye text-135xl'>H</span>ow <span className='font-savoye text-135xl'>I</span>t Works
+                <div className='text-center pb-12' id="how_it_works_title_wrapper">
+                  <span className='text-center font-raleway text-brownFill relative z-20' id="how_it_works_title">
+                    <span className='font-savoye'>H</span>ow <span className='font-savoye'>I</span>t Works
                   </span>
                   <div id='looking_forward_title_wrapper'>
                     <span className='relative z-20 font-savoye text-brownFill text-6xl'>looking forward</span>
