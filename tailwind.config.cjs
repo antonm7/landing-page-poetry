@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     fontFamily: {
       raleway:['Raleway'],
-      savoye:['Savoye']
+      savoye:['Savoye'],
+      Montserrat:['Montserrat']
     },
     extend: {
       colors: {
