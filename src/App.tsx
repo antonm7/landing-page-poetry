@@ -6,6 +6,16 @@ import RyanStanton from '/ryanStanton.png'
 import RhielMadsen from  '/rhielMadsen.png'
 import GalleryBigger from  '/galleryBigger.jpg'
 import GallerySmaller from  '/gallerySmaller.png'
+import QualityLeft from '/qualityLeft.png'
+import QualityRight from '/qualityRight.png'
+import Company from '/company.jpg'
+import SendArrow from '/sendArrow.svg'
+import facebook from '/icons/facebook.svg'
+import instagram from '/icons/instagram.svg'
+import linkedin from '/icons/linkedin.svg'
+import tiktok from '/icons/tiktok.svg'
+import twitter from '/icons/twitter.svg'
+
 
 function App() {
   return (
@@ -46,8 +56,10 @@ function App() {
               <h3 className='font-raleway font-medium text-4xl pt-16 text-brownFill'>HOW IT WORKS</h3>
               <h3 className='font-raleway font-medium text-4xl pt-7 text-brownFill'>PURCHASE</h3>
               <div className='flex flex-wrap items-center pt-7'>
-                <div className='bg-brownFill w-3 h-3 rounded-full'/>
-                <h3 className='font-savoye text-9xl pl-2 pr-11' id="header_assembly_title">Assembly</h3>
+                <div className='flex items-center whitespace-nowrap'>
+                  <div className='bg-brownFill w-3 h-3 rounded-full'/>
+                  <h3 className='font-savoye text-9xl pl-2 pr-11' id="header_assembly_title">Assembly</h3>
+                </div>
                 <button 
                   id='half-rounded-button'
                   className='whitespace-nowrap bg-brownFill py-4 px-8 text-white font-raleway font-semibold text-lg'
@@ -74,15 +86,17 @@ function App() {
           </div>
         </div>
       </div>
-      {/* owners firest section */}
       <div>
+        {/* owners firest section */}
         <div className='flex'>
           <div className="left-line-width border-r-[1px] border-black">
-            OWNERS
+            <div className='pt-96 flex justify-center'>
+              <span className='inline-block -rotate-90 font-raleway font-regular text-lg'>OWNERS</span>
+            </div>
           </div> 
           <div className='w-full flex pl-32 pt-56' id='owners_images_content_wrapper'>
-            <div className='w-2/4'>
-              <div className='flex items-center '>
+            <div className='w-2/4' id="arielKenter_wrapper">
+              <div className='flex items-center' id="arielKenter_content_wrapper">
                 <div className='flex flex-col '>
                   <LazyLoadImage alt="Woman Image" src={ArielKenter} id='arielKenter_img'/>
                   <span className='font-raleway font-medium text-lg text-brownFill self-end pt-2'>HR Specialist</span>
@@ -116,11 +130,11 @@ function App() {
         </div>
         <div className='flex' id='blue_box_wrapper'>
             <div className="left-line-width border-r-[1px] border-black h-full"></div> 
-            <div className='w-full mx-10'>
+            <div className='w-full mx-10' id="blue_box_content_wrapper">
               <div className='relative w-full bg-[#DAE4E1] h-full'>
                 <div className='bgtext'></div>
-                <div className='flex items-center pl-24 pt-20 relative z-20' id='rhielMedsen_content'>
-                  <div className='flex flex-col items-end pr-16'>
+                <div className='flex items-center pl-24 pt-20 relative z-20' id='rhielMedsen_content_wrapper'>
+                  <div className='flex flex-col items-end pr-16' id="rhielMedsen_titles_wrapper">
                     <span id="rhiel_text" className='images_names_text font-raleway text-6xl text-brownFill font-normal '>
                       R<span className='font-savoye text-8xl pl-1'>h</span>iel
                     </span>
@@ -130,7 +144,7 @@ function App() {
                   </div>
                   <div className='flex flex-col relative '>
                     <LazyLoadImage alt="CEO Image" src={RhielMadsen} id='rhielMedsen_img'/>
-                    <span className='font-raleway font-medium text-lg text-brownFill self-end pt-2 '>CEO</span>
+                    <span className='font-raleway font-medium text-lg text-brownFill self-end pt-2'>CEO</span>
                   </div>
                 </div>
                 <div className='mt-48 z-20 text-center relative' id="owners_small_titles_wrapper">
@@ -151,29 +165,109 @@ function App() {
               </div>    
             </div>
         </div>
+        {/* Gallery */}
         <div className='flex'>
-          <div className="left-line-width border-r-[1px] border-black h-full"></div> 
-          <div className='mt-36 w-full flex justify-center' id="gallery_wrapper">
-            <div className='flex mr-16' id="galleryBigger_img_wrapper">
+          <div className="left-line-width border-r-[1px] border-black h-full">
+            <div className='pt-96 flex justify-center'>
+              <span className='inline-block -rotate-90 font-raleway font-regular text-lg'>GALLERY</span>
+            </div>
+          </div> 
+          <div className=' mt-36 w-full flex justify-center ' id="gallery_content_wrapper">
+            <div className='flex mr-16' id="gallery_left_column_wrapper">
                 <div className='relative'>
-                  <p className='-rotate-90 absolute whitespace-nowrap' id='gallery_rotate_text'>We make design more accessible.</p>
+                  <p className='-rotate-90 absolute whitespace-nowrap font-raleway text-lg font-semibold' id='gallery_rotate_text'>We make design more accessible.</p>
                 </div>
                 <div>
                   <LazyLoadImage id='galleryBigger_img' src={GalleryBigger} alt="Gallery Image"/>
+                  <span className='pt-4 float-right font-raleway font-bold text-lg text-browFill underline'>
+                    Read More
+                  </span>
                 </div>
             </div>
-            <div id="gallery_right_wrapper">
-              <p id="gallery_right_paragraph" className='font-raleway font-medium textlg text-brownFill max-w-[300px]'>
+            <div  id="gallery_right_column_wrapper" >
+              <p className='font-raleway font-medium textlg text-brownFill max-w-[300px]'>
                 Since our last Fitzroy House construction update a milestone was reached with the removal of the crane, the building is now at lock-up stage.
               </p>
-              <div className='pt-28' id="gallery_right_content_wrapper">
+              <div className='pt-28' id="gallery_right_column_content_wrapper">
                 <span className='font-raleway font-medium text-lg text-brown'>{'{ 01 }'}</span>
-                <div className='mt-3 flex items-center' id="gallery_right_image_content_wrapper">
-                  <LazyLoadImage src={GallerySmaller}/>
+                <div className='mt-3 flex items-center' id="gallery_right_column_images_wrapper">
+                  <LazyLoadImage src={GallerySmaller} id="gallerySmaller_img"/>
                   <span className='pl-8 font-raleway text-brwonFill font-bold text-xl'>COMPREHENSIVE<br />SERVICES</span>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        {/* Quality */}
+        <div className='flex'>
+          <div className="left-line-width border-r-[1px] border-black h-full">
+            <div className='flex justify-center' id="quality_navbar_rotated">
+              <span className='inline-block -rotate-90 font-raleway font-regular text-lg'>COMPANY</span>
+            </div>
+          </div>
+          <div className='px-28 mt-36 w-full ' id="quality_wrapper">
+            <div className='flex justify-between items-center' id="quality_titles_wrapper">
+              <LazyLoadImage src={QualityLeft} id="qualityLeft_img"/>
+              <h1 className='text-brownFill font-raleway' id="quality_title">
+                <span className='font-savoye'>Q</span>uality
+              </h1>
+              <LazyLoadImage src={QualityRight} id="qualityRight_img"/>
+            </div>
+            <div className="relative z-10 pt-4 flex justify-between px-12" id="quality_paragraphs_wrapper">
+              <div className='pr-12' id="quality_left_wrapper">
+                <p className='leading-9 font-raleway font-semibold text-4xl text-brownFill max-w-[450px]' id="quality_para_title">We make thoughtful
+lighting design
+more accessible.</p>
+                <p className='leading-8 font-raleway font-medium text-lg text-brownFill pt-12 max-w-[450px]'>Lifts have been installed and finishing trades are systematically working their way up the building.</p>
+              </div>
+              <div>
+                <p className='leading-8 font-raleway font-medium text-lg text-brownFill max-w-[450px]'>Who will live in our homes and how they will live in them comes first.
+Our homes carry our family name in every way. They are a testament to our passion, our commitment to quality and our vision to create exceptional homes where people love to live.</p>
+                <p className='leading-8 font-raleway font-medium text-lg text-brownFill max-w-[450px] pt-6'>We have a unique understanding of what defines luxury. Timelessness over trends, it’s found in the fine detail, the materiality and texture, in light and space.
+Five decades on and stronger than ever, our legacy is built on our unwavering ambition to create extraordinary places that stand for generations. </p>
+              </div>
+            </div>
+            <div className='relative z-0' id="company_wrapper">
+              <LazyLoadImage src={Company} id="company_img"/>
+              <div className="bg-[#BAC7C4]" id="under_company_image" />
+              <span className='absolute font-raleway text-7xl font-black text-white' id="company_title_rotated">
+                COMPANY
+              </span>
+            </div>
+            <div className='flex justify-between pt-16 items-center pb-28' id="quality_footer_wrapper">
+              <h3 className=' normal text-brownFill font-raleway text-7xl font-normal'>Ready? <br />
+              to get started</h3>
+              <button className='whitespace-nowrap bg-brownFill w-52 h-16 font-raleway font-bold text-lg text-white'>Get Started</button>
+            </div>
+          </div>
+        </div>
+        {/* Footer */}
+        <div className='relative overflow-hidden flex justify-between h-full w-full bg-brownFill px-20 pt-24 pb-14' id="footer_wrapper">
+          <h1 className='z-10 text-[#444744] font-raleway font-normal' id="footer_title">
+            M<span className=' font-savoye font-normal text-[#545F52] footer_title_span'>a</span>ke <br />
+            things <br />
+            r<span className=' font-savoye font-normal text-[#545F52] footer_title_span'>e</span>al
+          </h1>
+          <div id="footer_bgText" />
+          <div className='pt-24 z-20' id="footer_form_wrapper">
+            <div className='pl-20' id="footer_form_links">
+              <span className="font-Montserrat font-bold text-lg text-[#444744] whitespace-nowrap">About</span>
+              <span className="font-Montserrat font-bold text-lg px-20 text-[#444744] whitespace-nowrap">Resources</span>
+              <span className="font-Montserrat font-bold text-lg text-white whitespace-nowrap">Costumer Service</span>
+            </div>
+            <div className='flex mt-16' id="footer_input_wrapper">
+              <input placeholder='Your email'/>
+              <div className='w-16 h-16 flex items-center justify-center' id="footer_arrow_button">
+                <img src={SendArrow}/>
+              </div>
+            </div>
+              <div className='flex justify-end items-center mt-36' id="footer_social_wrapper">
+                <img src={facebook} className="mr-8"/>
+                <img src={twitter} className=" mr-8"/>
+                <img src={instagram} className=" mr-8"/>
+                <img src={linkedin} className=" mr-8"/>
+                <img src={tiktok} />
+              </div>
           </div>
         </div>
       </div>

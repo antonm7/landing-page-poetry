@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,11 +27,21 @@ body {
     min-width: 5rem;
     width: 5rem;
     height: auto;
+    z-index: 20;
 }
 
 #owner_bg_title {
     letter-spacing: 5rem;
     right: -12rem;
+    @include for-size(tablet-portrait) {
+        font-size: 4rem;
+        letter-spacing: 3rem;
+        right: -8rem;
+        z-index: -1;
+    }
+    @include for-size(phone-only) {
+        top: 5rem;
+    }
 }
 
 #kenter_name_title {
@@ -39,6 +50,9 @@ body {
 
 #stanton_name_title {
     margin-top: -2rem;
+    @include for-size(tablet-portrait) {
+        padding-left: 0;
+    }
 }
 
 #madsen_name_title {
@@ -54,25 +68,31 @@ body {
     transform: translateX(-50%);
     font-family:Raleway ;
     font-weight: 900;
-   font-size: 160px;
-   text-align: center;
-   line-height: 0.9em;
-   opacity: 0.8;
-   word-wrap:break-word;
-   max-width: 100%;
-   @include for-size(tablet-landscape) {
-    font-size: 120px;
-    line-height: 1.2em;
-   }
-   @include for-size(tablet-portrait) {
-    font-size: 60px;
-    line-height: 1.2em;
-   }
+    font-size: 160px;
+    text-align: center;
+    line-height: 0.9em;
+    opacity: 0.8;
+    word-wrap:break-word;
+    max-width: 100%;
+    @include for-size(tablet-landscape) {
+        font-size: 120px;
+        line-height: 1.2em;
+    }
+    @include for-size(tablet-portrait) {
+        font-size: 90px;
+        line-height: 1.2em;
+    }
+  
 }
 
 #blue_box_wrapper {
     margin-top: -6.5rem;
-    // min-height: 1050px;
+}
+
+#blue_box_content_wrapper {
+    @include for-size(phone-only) {
+        margin: 0;
+    }
 }
 
 .center_with_transform {
@@ -84,6 +104,10 @@ body {
 #this_year_titles {
     margin-left: -8rem;
     margin-top: -0.5rem;
+    @include for-size(phone-only) {
+        margin: 0;
+    }
+    
 }
 
 #how_it_works_title_wrapper {
@@ -95,10 +119,146 @@ body {
 
 #how_it_works_title {
     font-size: 12vw;
+    @include for-size(tablet-portrait) {
+        text-align: center;
+        padding: 0 1rem ;
+        white-space:pre-wrap;
+        line-height: 5.5rem;
+    }
+    @include for-size(phone-only) {
+        font-size: 3.8rem;
+        line-height: 3.8rem;
+    }
 }
 
 #looking_forward_title_wrapper {
     margin-top: -3rem;
+    @include for-size(tablet-landscape) {
+        margin: -1rem;
+        padding-bottom: 1rem;
+    }
+    @include for-size(tablet-portrait) {
+        margin-top: 2rem;
+        span {
+            font-size: 6vw;
+            @include for-size(phone-only) {
+                font-size: 2.5rem;
+            }
+        }
+        @include for-size(phone-only) {
+            margin-top:1rem;
+        }
+    }
+}
+
+#gallery_content_wrapper {
+    @include for-size(tablet-portrait) {
+        flex-direction:column;
+        align-items: center;
+        padding-left: 2.5rem;
+    }
+}
+
+#gallery_right_column_wrapper {
+    @include for-size(tablet-portrait) {
+        padding-top: 5rem;
+    }
+}
+
+#gallery_right_column_content_wrapper {
+    @include for-size(tablet-portrait) {
+        padding-top: 2rem;
+    }
+}
+
+#gallery_right_column_images_wrapper {
+    @include for-size(tablet-portrait) {
+        flex-direction: column;
+        align-items: flex-start;
+        span {
+            padding: 1rem 0;
+        }
+    }
+    
+}
+
+#gallerySmaller_img {
+    @include for-size(phone-only) {
+        min-width:20px ;
+    }
+}
+
+#galleryBigger_img  {
+    width: 370px;
+    height: 550px;
+    
+    @include for-size(tablet-landscape) {
+        width: 240px !important;
+        height: 380px !important;
+    }
+    @include for-size(phone-only) {
+        min-width:200px !important;
+        height: 380px !important;
+    }
+}
+
+#gallery_rotate_text {
+    left: -10.5rem;
+    bottom: 11.5rem;
+    @include for-size(tablet-landscape) {
+        bottom: 22rem;
+    }
+    @include for-size(tablet-portrait) {
+        bottom: 11rem;
+    }
+}
+
+#quality_wrapper {
+    @include for-size(tablet-landscape) {
+        padding-left:2.5rem;
+        padding-right:2.5rem;
+    }
+    @include for-size(tablet-portrait) {
+        padding-left:2rem;
+        padding-right:2rem;
+    }
+}
+
+#quality_navbar_rotated {
+    padding-top: 950px;
+}
+
+#quality_paragraphs_wrapper {
+    @include for-size(tablet-landscape) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    @include for-size(tablet-portrait) {
+        flex-direction: column;
+        p {
+            width: 100% ;
+            max-width: 100%;
+            padding-right: 1rem;
+        }
+    }
+    @include for-size(phone-only) {
+        padding-left: 0;
+    }
+}
+
+#quality_left_wrapper {
+    @include for-size(tablet-portrait) {
+        padding-right: 2rem;
+        padding-bottom: 1rem !important;
+    }
+}
+
+#quality_titles_wrapper {
+    @include for-size(tablet-landscape) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
 }
 
 #header_poetry_title {
@@ -155,9 +315,11 @@ body {
 #owners_paragraphs_wrapper {
     @include for-size(mid-desktop) {
         padding-left: 4rem;
+        
     }
     @include for-size(tablet-landscape) {
         flex-direction: column;
+        padding-right: 2rem;
     }
 }
 
@@ -177,6 +339,10 @@ body {
         padding-top:10rem;
         flex-direction: column;
     }
+    @include for-size(phone-only) {
+        padding-top: 5rem;
+    }
+  
 }
 
 #owners_paragraphs_wrapper {
@@ -191,6 +357,19 @@ body {
     }
 }
 
+#arielKenter_wrapper {
+    @include for-size(phone-only) {
+        width: 100%;
+    }
+}
+
+#arielKenter_content_wrapper {
+    @include for-size(phone-only) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
 #arielKenter_img {
     min-width: 290px;
     height: 303px;
@@ -198,6 +377,12 @@ body {
         min-width: 200px;
         height: 213px;
     }
+}
+
+#arielKenter_name_text_container {
+    float: right;
+    text-align: unset;
+    align-items: flex-end;
 }
 
 #ryanStanton_content_wrapper {
@@ -211,7 +396,11 @@ body {
         float: right;
         padding-top: 10rem;
      }
-}
+     @include for-size(phone-only) {
+        flex-direction: column-reverse;
+        float: unset;
+     }
+    }
 
 #ryanStanton_img {
     min-width: 220px;
@@ -234,6 +423,16 @@ body {
         padding-top: 8rem;
         padding-left: 2rem;
     }
+    @include for-size(tablet-portrait) {
+        align-items: flex-start;
+        padding-left: 0rem;
+        padding-top: 10rem;
+    }
+    @include for-size(phone-only) {
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 2rem;
+    }
 }
 
 #owners_small_titles_wrapper {
@@ -251,77 +450,244 @@ body {
 
 #rhiel_text {
     @include for-size(tablet-portrait) {
-        padding-right: 1rem;
+        padding-right: 1.4rem;
+    }
+    
+}
+
+#rhielMedsen_titles_wrapper {
+    @include for-size(tablet-portrait) {
+        padding-right:0rem;
     }
 }
 
-#arielKenter_name_text_container {
-    padding-left: 0;
-}
-
-#galleryBigger_img  {
-    width: 370px;
-    height: 550px;
-    @include for-size(big-desktop) {
-        width: 270px;
-        height: 450px;
-    }
-}
-
-#galleryBigger_img_wrapper {
+#quality_title {
+    font-size: 160px;
     @include for-size(tablet-landscape) {
-        width: 53%;
-        margin-right: 0;
+        font-size: 120px;
+        line-height: 1.2em;
     }
     @include for-size(tablet-portrait) {
-        width: 100%;
-        padding-left: 5rem;
+        font-size: 60px;
+        line-height: 1.2em;
+    }
+    @include for-size(phone-only) {
+        padding: 1rem 0;
     }
 }
 
-#gallery_right_image_content_wrapper {
+#qualityLeft_img {
+    width: 189px;
+    height: 133px;
+}
+
+#qualityRight_img {
+    width: 189px;
+    height: 133px;
+}
+
+#company_wrapper {
+    margin-top: -2.5rem;
+    @include for-size(phone-only) {
+        margin-top: 2rem;
+    }
+}
+
+#quality_para_title {
+    line-height: 1.4em;
+    @include for-size(phone-only) {
+        padding-right: 0 !important;
+    }
+}
+
+#under_company_image {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    max-width: 590px;
+    height:290px;
+    bottom: -2rem;
+    left: 17rem;
     @include for-size(tablet-landscape) {
+        left: unset;
+        right: -5% !important;
+    }
+    @include for-size(tablet-portrait) {
+        width: 250px;
+        height: 200px;
+        left: 11.5rem;
+        top: 4rem;
+     }
+     @include for-size(phone-only) {
+        width: 200px;
+        height: 100px;
+        left: unset;
+        top: unset;
+        right: -1rem !important;
+        bottom: -1rem;
+    }
+}
+
+#company_img {
+    @include for-size(tablet-portrait) {
+       width: 400px;
+    }
+}
+
+#company_title_rotated {
+    top: 18rem;
+    right: 5rem;
+    stroke: black;
+    transform: translateX(50%) rotate(90deg);
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: 211D18;
+    @include for-size(tablet-landscape) {
+        right: -3rem;
+    }
+    @include for-size(tablet-portrait) {
+        font-size: 4rem;
+        top: 13rem;
+        right: -1rem;
+    }
+    @include for-size(phone-only) {
+        display: none;
+    }
+}
+
+#quality_footer_wrapper {
+    @include for-size(phone-only) {
         flex-direction: column;
         align-items: flex-start;
-        span {
-            padding-left: 0;
-            padding-top: 1rem;
+        margin-top: 1rem;
+        h3 {
+            font-size: 3.5rem;
+        }
+        button {
+            margin-top: 2rem;
+            width: 11rem;
         }
     }
 }
 
-#gallery_right_paragraph {
-    @include for-size(tablet-landscape) {
-        max-width: 230px;
-    }
-}
 
-#gallery_rotate_text {
-    left: -10rem;
-    bottom: 10.2rem;
+#footer_wrapper {
     @include for-size(tablet-landscape) {
-        bottom: 17.8rem;
-    }
-    @include for-size(tablet-portrait) {
-        bottom: 7rem;
-    }
-}
-
-#gallery_wrapper {
-    @include for-size(tablet-portrait) {
         flex-direction: column;
     }
-}
-
-#gallery_right_wrapper {
-    @include for-size(tablet-portrait) {
-        padding-left: 2.5rem;
-        padding-top: 3rem;
+    @include for-size(phone-only) {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
 
-#gallery_right_content_wrapper {
-    @include for-size(tablet-portrait) {
-        padding-top:1.5rem;
+#footer_title {
+    font-size: 9.5em;
+    line-height: 0.9em;
+    letter-spacing: 0.2rem;
+    @include for-size(tablet-landscape) {
+        font-size: 120px;
     }
+    @include for-size(phone-only) {
+        font-size: 70px;
+    }
+}
+
+.footer_title_span {
+    font-size: 350px;
+    padding-left: 6px;
+    line-height: 0 !important;
+    @include for-size(tablet-landscape) {
+        font-size: 250px;
+    }
+    @include for-size(phone-only) {
+        font-size: 130px;
+    }
+}
+
+#footer_input_wrapper {
+    input {
+        width: 100%;
+        max-width: 560px;
+        height: 64px;
+        border: 2px solid #444744;
+        color: #B7C5C5;
+        font-family: Montserrat;
+        font-size:18px;
+        padding-left: 32px;
+        background-color: transparent;
+        outline: none;
+        &::placeholder {
+            color: #B7C5C5;
+        }
+        @include for-size(tablet-landscape) {
+            max-width: 100%;
+            width: 100%;
+        }
+        @include for-size(phone-only) {
+            padding-left: 0.5rem;
+        }
+    }
+    @include for-size(tablet-landscape) {
+        max-width: 70%;
+        width: 70%;
+    }
+}
+
+#footer_arrow_button {
+    border: 2px solid #444744;
+    border-left: none;
+}
+
+#footer_bgText:after {
+    position: absolute;
+    content: "We created Boka Place with the wishes and needs of interested buyers in mind. Boka Place provides luxury quality and high Porto Montenegro standards while offering a more affordable alternative for discerning shoppers.    ";
+    color: #262626;
+    font-family: Raleway;
+    font-size: 1.1rem;
+    font-weight: 500;
+    max-width: 200px;
+    z-index: -0.1;
+    left:26rem;
+    padding-top: 3rem;
+    @include for-size(tablet-landscape) {
+        left: 21rem;
+        top: 5rem;
+    }
+    @include for-size(phone-only) {
+        left: 8rem;
+        top: 2rem;
+    }
+}
+
+#footer_form_wrapper {
+    @include for-size(tablet-landscape) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include for-size(phone-only) {
+        align-items: start;
+     }
+   
+}
+
+#footer_form_links {
+    @include for-size(tablet-landscape) {
+        padding-left: 0;
+    }
+    @include for-size(phone-only) {
+        display: flex;
+        flex-direction: column;
+        span {
+            padding:0.5rem 0;
+        }
+     }
+}
+
+#footer_social_wrapper {
+    @include for-size(phone-only) {
+        img {
+            margin:0 1rem;
+        }
+     }
 }
