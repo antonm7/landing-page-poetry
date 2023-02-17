@@ -15,9 +15,79 @@ import instagram from '/icons/instagram.svg'
 import linkedin from '/icons/linkedin.svg'
 import tiktok from '/icons/tiktok.svg'
 import twitter from '/icons/twitter.svg'
-
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import { useEffect, useRef } from 'react'
 
 function App() {
+  // Header 
+  const assemblyDot = useRef(null)
+  const asseblyButton = useRef(null)
+  const assemblyTitle = useRef(null)
+  const headerImage = useRef(null)
+  
+  //Owner refs
+  const ownerTitle = useRef(null)
+  //blueBox
+  const blueBoxBg = useRef(null)
+  const rhielMedsenTitle = useRef(null)
+
+  //Gallery
+  const comprehensiveTitle = useRef(null)
+  const comprehensiveImage = useRef(null)
+  const qualityTitle = useRef(null)
+
+  // Quality
+  const qualityParagraphsWrapper = useRef(null)
+  
+  // Company
+  const companyReverseTitle = useRef(null)
+  const getStartedButton = useRef(null)
+  const readyTitle = useRef(null)
+  
+  // Footer
+  const footerTitle = useRef(null)
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    
+    gsap.fromTo(assemblyDot.current, {x:-100},{x:0})
+    gsap.fromTo(asseblyButton.current, {scale:0},{scale:1})
+    gsap.fromTo(assemblyTitle.current, {x:100},{x:0})
+    gsap.fromTo(headerImage.current, {scale:0.8},{scale:1})
+    gsap.fromTo(blueBoxBg.current,{scaleX:0.6},{scaleX:1,duration:0.5})
+    gsap.fromTo(ownerTitle.current,{x:-300},{x:0,scrollTrigger: {
+      trigger:ownerTitle.current,
+      scrub:true
+    }})
+    gsap.fromTo(rhielMedsenTitle.current,{x:-100},{x:0})
+    gsap.fromTo(comprehensiveTitle.current,{x:100},{x:0,scrollTrigger: {
+        trigger:comprehensiveTitle.current,
+        scrub:true
+    }})
+    gsap.fromTo(comprehensiveImage.current, {scale:0.8},{scale:1,
+      scrollTrigger:{
+        trigger:comprehensiveImage.current,
+        scrub:true
+      }})
+      gsap.fromTo(qualityTitle.current,{y:100},{y:0,
+        scrollTrigger:qualityTitle.current})
+      gsap.fromTo(qualityParagraphsWrapper.current,{y:100},{y:0,
+        scrollTrigger:qualityParagraphsWrapper.current})  
+      gsap.fromTo(companyReverseTitle.current, {y:-100},{y:0, scrollTrigger: {
+        trigger:companyReverseTitle.current,
+        scrub:true
+      }})
+    gsap.fromTo(getStartedButton.current, {scale:0.8},{scale:1,scrollTrigger:{
+      trigger:getStartedButton.current,scrub:true}})
+    gsap.fromTo(readyTitle.current, {y:100},{y:0,scrollTrigger:{
+      trigger:readyTitle.current,scrub:true}})
+    gsap.fromTo(footerTitle.current,{x:-200},{x:0,scrollTrigger:
+      footerTitle.current
+    })
+  },[])
+
+  // owners refs
   return (
     <div>
       {/* Header section */}
@@ -25,7 +95,7 @@ function App() {
         {/* main header navigation */}
          <div className="left-line-width border-r-[1px] border-black">
           <div className="flex justify-center items-center w-full h-20 border-b-[1px] border-black">
-            <img src={Logo} loading="lazy"/>
+            <LazyLoadImage src={Logo}/>
           </div>
           <div className='border-b-[1px] border-black'>
             <div className='pt-24 flex justify-center'>
@@ -43,24 +113,25 @@ function App() {
             </div>
         </div> 
           <div className="flex w-full" id="header_wrapper">
-            <div id='header_house_container' className='px-16 pt-6 w-2/4 border-r-[1px] border-black'>
+            <div id='hea  der_house_container' className='px-16 pt-6 w-2/4 border-r-[1px] border-black'>
               <span className=' font-raleway font-medium text-lg'>ESTATE AGENCY</span>
-              <img src={HeaderHouse} className="pt-6 h-auto "/>
+              <img src={HeaderHouse} ref={headerImage} className="pt-6 h-auto "/>
               <h3 className='pt-6 font-raleway fonr-regular text-center tracking-[0.5em] text-lg'>SINCE 1999</h3>
             </div>
             <div id='header_titles_container' className='pl-16 pr-8 pt-12 w-2/4'>
               <h1 id="header_poetry_title"className='font-raleway font-normal text-brownFill leading-[0.9em]'>
-                POETR<span className=' font-savoye'>Y</span><br />
+                POETR<span className='font-savoye'>Y</span><br />
                 <span className=' font-savoye'>I</span>N DESI<span className=' font-savoye'>G</span>N
               </h1>
               <h3 className='font-raleway font-medium text-4xl pt-16 text-brownFill'>HOW IT WORKS</h3>
               <h3 className='font-raleway font-medium text-4xl pt-7 text-brownFill'>PURCHASE</h3>
               <div className='flex flex-wrap items-center pt-7'>
                 <div className='flex items-center whitespace-nowrap'>
-                  <div className='bg-brownFill w-3 h-3 rounded-full'/>
-                  <h3 className='font-savoye text-9xl pl-2 pr-11' id="header_assembly_title">Assembly</h3>
+                  <div className='bg-brownFill w-3 h-3 rounded-full' ref={assemblyDot}/>
+                  <h3 className='font-savoye text-9xl pl-2 pr-11' id="header_assembly_title" ref={assemblyTitle}>Assembly</h3>
                 </div>
                 <button 
+                  ref={asseblyButton}
                   id='half-rounded-button'
                   className='whitespace-nowrap bg-brownFill py-4 px-8 text-white font-raleway font-semibold text-lg'
                 >Get Started</button>
@@ -110,7 +181,7 @@ function App() {
               </div>
             </div>
             <div className='z-10 relative w-2/4 h-full' id='ryanStanton_content_wrapper'>
-              <h2 className='absolute top-0 right-0 text-[#F1F4F3] font-bold text-8xl' id="owner_bg_title">OWNER</h2>
+              <h2 className='absolute top-0 right-0 text-[#F1F4F3] font-bold text-8xl' ref={ownerTitle} id="owner_bg_title">OWNER</h2>
               <div className='flex items-center pt-72' id='ryanStanton_images_container'>
                 <div className='flex flex-col'>
                   <LazyLoadImage alt="Woman Image" id='ryanStanton_img' src={RyanStanton}/>
@@ -131,10 +202,11 @@ function App() {
         <div className='flex' id='blue_box_wrapper'>
             <div className="left-line-width border-r-[1px] border-black h-full"></div> 
             <div className='w-full mx-10' id="blue_box_content_wrapper">
-              <div className='relative w-full bg-[#DAE4E1] h-full'>
+              <div className='relative '>
+                <div ref={blueBoxBg} className='bg-[#DAE4E1] w-full h-full absolute'></div>
                 <div className='bgtext'></div>
                 <div className='flex items-center pl-24 pt-20 relative z-20' id='rhielMedsen_content_wrapper'>
-                  <div className='flex flex-col items-end pr-16' id="rhielMedsen_titles_wrapper">
+                  <div ref={rhielMedsenTitle} className='flex flex-col items-end pr-16' id="rhielMedsen_titles_wrapper">
                     <span id="rhiel_text" className='images_names_text font-raleway text-6xl text-brownFill font-normal '>
                       R<span className='font-savoye text-8xl pl-1'>h</span>iel
                     </span>
@@ -191,8 +263,10 @@ function App() {
               <div className='pt-28' id="gallery_right_column_content_wrapper">
                 <span className='font-raleway font-medium text-lg text-brown'>{'{ 01 }'}</span>
                 <div className='mt-3 flex items-center' id="gallery_right_column_images_wrapper">
-                  <LazyLoadImage src={GallerySmaller} id="gallerySmaller_img"/>
-                  <span className='pl-8 font-raleway text-brwonFill font-bold text-xl'>COMPREHENSIVE<br />SERVICES</span>
+                  <div ref={comprehensiveImage}>
+                    <LazyLoadImage  src={GallerySmaller} id="gallerySmaller_img"/>
+                  </div>
+                  <span ref={comprehensiveTitle}className='pl-8 font-raleway text-brwonFill font-bold text-xl'>COMPREHENSIVE<br />SERVICES</span>
                 </div>
               </div>
             </div>
@@ -208,12 +282,12 @@ function App() {
           <div className='px-28 mt-36 w-full ' id="quality_wrapper">
             <div className='flex justify-between items-center' id="quality_titles_wrapper">
               <LazyLoadImage src={QualityLeft} id="qualityLeft_img"/>
-              <h1 className='text-brownFill font-raleway' id="quality_title">
+              <h1 ref={qualityTitle} className='text-brownFill font-raleway' id="quality_title">
                 <span className='font-savoye'>Q</span>uality
               </h1>
               <LazyLoadImage src={QualityRight} id="qualityRight_img"/>
             </div>
-            <div className="relative z-10 pt-4 flex justify-between px-12" id="quality_paragraphs_wrapper">
+            <div ref={qualityParagraphsWrapper} className="relative z-10 pt-4 flex justify-between px-12" id="quality_paragraphs_wrapper">
               <div className='pr-12' id="quality_left_wrapper">
                 <p className='leading-9 font-raleway font-semibold text-4xl text-brownFill max-w-[450px]' id="quality_para_title">We make thoughtful
 lighting design
@@ -230,20 +304,20 @@ Five decades on and stronger than ever, our legacy is built on our unwavering am
             <div className='relative z-0' id="company_wrapper">
               <LazyLoadImage src={Company} id="company_img"/>
               <div className="bg-[#BAC7C4]" id="under_company_image" />
-              <span className='absolute font-raleway text-7xl font-black text-white' id="company_title_rotated">
+              <span ref={companyReverseTitle} className='absolute font-raleway text-7xl font-black text-white' id="company_title_rotated">
                 COMPANY
               </span>
             </div>
             <div className='flex justify-between pt-16 items-center pb-28' id="quality_footer_wrapper">
-              <h3 className=' normal text-brownFill font-raleway text-7xl font-normal'>Ready? <br />
+              <h3 ref={readyTitle} className='normal text-brownFill font-raleway text-7xl font-normal'>Ready? <br />
               to get started</h3>
-              <button className='whitespace-nowrap bg-brownFill w-52 h-16 font-raleway font-bold text-lg text-white'>Get Started</button>
+              <button className='whitespace-nowrap bg-brownFill w-52 h-16 font-raleway font-bold text-lg text-white' ref={getStartedButton}>Get Started</button>
             </div>
           </div>
         </div>
         {/* Footer */}
         <div className='relative overflow-hidden flex justify-between h-full w-full bg-brownFill px-20 pt-24 pb-14' id="footer_wrapper">
-          <h1 className='z-10 text-[#444744] font-raleway font-normal' id="footer_title">
+          <h1 ref={footerTitle} className='z-10 text-[#444744] font-raleway font-normal' id="footer_title">
             M<span className=' font-savoye font-normal text-[#545F52] footer_title_span'>a</span>ke <br />
             things <br />
             r<span className=' font-savoye font-normal text-[#545F52] footer_title_span'>e</span>al
@@ -257,17 +331,17 @@ Five decades on and stronger than ever, our legacy is built on our unwavering am
             </div>
             <div className='flex mt-16' id="footer_input_wrapper">
               <input placeholder='Your email'/>
-              <div className='w-16 h-16 flex items-center justify-center' id="footer_arrow_button">
-                <img src={SendArrow}/>
+                <div className='w-16 h-16 flex items-center justify-center' id="footer_arrow_button">
+                  <LazyLoadImage src={SendArrow}/>
+                </div>
               </div>
-            </div>
-              <div className='flex justify-end items-center mt-36' id="footer_social_wrapper">
-                <img src={facebook} className="mr-8"/>
-                <img src={twitter} className=" mr-8"/>
-                <img src={instagram} className=" mr-8"/>
-                <img src={linkedin} className=" mr-8"/>
-                <img src={tiktok} />
-              </div>
+                <div className='flex justify-end items-center mt-36' id="footer_social_wrapper">
+                  <LazyLoadImage src={facebook} className="icon mr-8"/>
+                  <LazyLoadImage src={twitter} className="icon mr-8"/>
+                  <LazyLoadImage src={instagram} className="icon mr-8"/>
+                  <LazyLoadImage src={linkedin} className="icon mr-8"/>
+                  <LazyLoadImage src={tiktok} className="icon"/>
+                </div>
           </div>
         </div>
       </div>
