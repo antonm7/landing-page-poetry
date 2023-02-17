@@ -636,6 +636,10 @@ body,html {
         max-width: 70%;
         width: 70%;
     }
+    @include for-size(tablet-portrait) {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 #footer_arrow_button {
