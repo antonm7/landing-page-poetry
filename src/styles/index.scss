@@ -24,6 +24,9 @@ body,html {
 }
 
 .left-line-width {
+    @include for-size(phone-only) {
+        display: none   ;
+    }
     min-width: 5rem;
     width: 5rem;
     height: auto;
@@ -292,7 +295,9 @@ body,html {
     @include for-size(tablet-portrait) {
         border-left: 0;
         width: 100%;
+        border: 0 !important;
     }
+    
 }
 
 #header_titles_container {

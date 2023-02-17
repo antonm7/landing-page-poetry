@@ -113,7 +113,7 @@ function App() {
             </div>
         </div> 
           <div className="flex w-full" id="header_wrapper">
-            <div id='hea  der_house_container' className='px-16 pt-6 w-2/4 border-r-[1px] border-black'>
+            <div id='header_house_container' className='px-16 pt-6 w-2/4 border-r-[1px] border-black'>
               <span className=' font-raleway font-medium text-lg'>ESTATE AGENCY</span>
               <img src={HeaderHouse} ref={headerImage} className="pt-6 h-auto "/>
               <h3 className='pt-6 font-raleway fonr-regular text-center tracking-[0.5em] text-lg'>SINCE 1999</h3>
